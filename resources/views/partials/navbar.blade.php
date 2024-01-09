@@ -5,13 +5,13 @@
             <h1 class="text-white text-3xl font-bold">Fabio Dev</h1>
             <menu class=" gap-12 items-center hidden md:flex">
                 <li>
-                    <a href="#">Home</a>
+                    <a href="#home">Home</a>
                 </li>
                 <li>
-                    <a href="#">Portfolio</a>
+                    <a href="#portfolio">Portfolio</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="/">About</a>
                 </li>
             </menu>
             @auth

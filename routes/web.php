@@ -34,9 +34,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/project/edit/{project}', [ProjectController::class, 'edit'])->name('edit');
+    Route::post('/project/edit/{project}', [ProjectController::class, 'update'])->name('update');
+    Route::delete('/project/delete/{project}', [ProjectController::class, 'delete'])->name('destroy');
 });
 
 
 Route::get('/project/{project}', [ProjectController::class, 'show'])->name('project');
+
 
 require __DIR__ . '/auth.php';

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -39,7 +40,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        $types = Type::all();
+        return view('admin.edit', compact('project', 'types'));
     }
 
     /**
@@ -47,14 +49,18 @@ class ProjectController extends Controller
      */
     public function update(UpdateTypeRequest $request, Project $project)
     {
-        //
+        $data = $request->all();
+        $project->update($data);
+
+        return redirect()->route('project', $project->id);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function delete(Project $project)
     {
-        //
+        $project->delete();
+        return redirect()->route('dashboard');
     }
 }

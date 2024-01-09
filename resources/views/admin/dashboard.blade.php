@@ -14,7 +14,7 @@
                         <figure
                             class="rounded transition-all duration-200 cursor-pointer drop-shadow-sm relative border-[2px] border-[#eb4432] border-dashed">
                             <a href="{{ route('project', $project) }}">
-                                <img class="rounded drop-shadow" src="{{ $project->imageurl }}">
+                                <img draggable="false" class="rounded drop-shadow" src="{{ $project->imageurl }}">
                                 <div id="custom-hover"
                                     class="absolute top-0 left-0 opacity-0 z-[-1] transition-all duration-200 w-full h-full bg-[#5851518c]">
 
@@ -32,19 +32,4 @@
             </ul>
         </div>
     </main>
-    <style>
-        figure:hover #custom-hover {
-            opacity: 100;
-            z-index: 1;
-        }
-
-        figure:hover {
-            transform: scale(1.05);
-        }
-
-        figure #custom-hover {
-            opacity: 0;
-            z-index: -1;
-        }
-    </style>
 @endsection
