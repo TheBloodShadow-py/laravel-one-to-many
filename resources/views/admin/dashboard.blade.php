@@ -6,8 +6,14 @@
 
     <main class="my-20 py-8 px-6">
         <div class=" container my-0 mx-auto transition-all ">
-            <h1 class=" text-3xl font-bold mb-10 text-[#eb4432] transition-colors duration-200">
-                My projects</h1>
+            <div class="flex justify-between items-center">
+                <h1 class=" text-3xl font-bold mb-10 text-[#eb4432] transition-colors duration-200">
+                    My projects</h1>
+                <a href={{ route('create') }}
+                    class="bg-[#eb4432] translate-y-[-8px] text-[#171923] text-xl hover:bg-[#d86154] transition-colors duration-400  py-2 pt-1 px-5 rounded-lg">
+                    Create
+                </a>
+            </div>
             <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-12">
                 @forelse ($projects as $project)
                     <li class="rounded flex flex-col gap-2">

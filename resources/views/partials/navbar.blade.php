@@ -5,7 +5,7 @@
             <h1 class="text-white text-3xl font-bold">Fabio Dev</h1>
             <menu class=" gap-12 items-center hidden md:flex">
                 <li>
-                    <a href="#home">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
                     <a href="#portfolio">Portfolio</a>

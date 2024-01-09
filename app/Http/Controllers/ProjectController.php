@@ -16,7 +16,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        $types = Type::all();
+        return view('admin.create', compact('types'));
     }
 
     /**
@@ -24,7 +25,19 @@ class ProjectController extends Controller
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        $data = $request->all();
+
+
+        $new_project = new Project();
+        $new_project->title = $data["title"];
+        $new_project->mainlanguage = $data["mainlanguage"];
+        $new_project->description = $data["description"];
+        $new_project->imageurl = $data["imageurl"];
+        $new_project->stars = $data["stars"];
+        $new_project->type_id = $data["type_id"];
+
+        $new_project->save();
+        return redirect()->route("project", $new_project->id);
     }
 
     /**
